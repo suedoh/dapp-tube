@@ -14,4 +14,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "react-scripts start" ]
+CMD [ "npm start" ]

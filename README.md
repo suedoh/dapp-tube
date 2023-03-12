@@ -102,6 +102,36 @@ Starting the development server...
 
 > 📌 Note: I cannot update this repo (main-branch) with react hooks because the initial [educational tutorial](https://learn.figment.io/tutorials/build-a-social-media-dapp-and-deploy-it-on-polygon) was written with react classes. However, if you want to work on this issue, then please `fork` the main branch and push your changes to `react-hooks` branch and send a [pull request](https://github.com/akhileshthite/dtube/pulls) for the same.
 
+### Docker instructions
+From the root directory where the `Dockerfile` can be found, run the following command:
+```
+docker build . -t dapp-tube
+```
+Once the image is built, use the following command to run the container:
+```
+docker run -p 8080:8080 -d dapp-tube
+```
+To print the output of your app:
+```
+# Get container ID
+$ docker ps
+
+# Print app output
+$ docker logs <container id>
+
+# Example
+Running on http://localhost:8080
+```
+If you need to go inside the container you can use the exec command:
+## Enter the container
+`$ docker exec -it dapp-tube /bin/bash`
+
+## Shutdown the image
+```
+# Kill our running container
+$ docker kill dapp-tube
+```
+
 ## License
 
 DTube is licensed under the [MIT license](https://github.com/AkhileshThite/DTube/blob/main/LICENSE).
